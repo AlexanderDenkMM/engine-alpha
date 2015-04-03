@@ -65,29 +65,6 @@ public abstract class PhysikClient {
 	public abstract void aufloesen ();
 
 	/**
-	 * Laesst das anliegende Objekt einen Sprung vollfuehren, <b>wenn es ein Aktiv-Objekt ist</b>.
-	 * Sonst ist dieser Methodenaufruf wirkungslos.
-	 *
-	 * @param kraft
-	 * 		Die Sprungkraft.
-	 *
-	 * @return <code>true</code>, wenn erfolgreich gesprungen wurde. In allen anderen Faellen
-	 * <code>false</code>.
-	 */
-	public abstract boolean sprung (int kraft);
-
-	/**
-	 * Setzt, ob das Ziel-Objekt von Schwerkraft beeinflusst wird.<br /> Der Aufruf dieser Methode
-	 * ist nur bei Gravitatoren sinnvoll. Bei allen anderen <code>PhysikClient</code>-Klassen wird
-	 * hierbei eine Fehlermeldung ausgegeben.
-	 *
-	 * @param aktiv
-	 * 		Ist dieser Wert <code>true</code>, so wird dieses Objekt von Schwerkraft beeinflusst. Ist
-	 * 		er <code>false</code>, dann nicht.
-	 */
-	public abstract void schwerkraftAktivSetzen (boolean aktiv);
-
-	/**
 	 * Diese Methode setzt die kritische Tiefe eines Aktiv-Objektes. Ab dieser wird das
 	 * entsprechende <code>FallReagierbar</code>-Inteface, <b>das angemeldet wurde</b>, ueber den
 	 * Fall informiert.
@@ -141,20 +118,6 @@ public abstract class PhysikClient {
 	public Raum ziel () {
 		return ziel;
 	}
-
-	/**
-	 * Setzt die Schwerkraft fuer dieses Objekt.<br /> <b>Achtung:</b> Standardwert: 4<br />
-	 * Groesserer Wert = langsamer Fallen<br /> Kleinerer Wert = schneller Fallen <br /> Negativer
-	 * Wert : Moege Gott uns allen gnaedig sein...
-	 *
-	 * @param schwerkraft
-	 * 		Der Wert fuer die Schwerkraft der Physik.<br /> <b>Wichtig:</b> Dies repraesentiert
-	 * 		<i>keinen</i> Wert fuer die (Erd-) Beschleunigungszahl "g" aus der Physik. Schon allein
-	 * 		deshalb, weil die Zahl umgekehrt wirkt (s. oben).
-	 *
-	 * @see ea.Raum#aktivMachen()
-	 */
-	public abstract void schwerkraftSetzen (int schwerkraft);
 
 	/**
 	 * Berechnet einen <b>neuen Impuls</b> auf das Client-Objekt.

@@ -244,28 +244,6 @@ public class MechanikClient extends PhysikClient implements Ticker {
 	}
 
 	/**
-	 * {@inheritDoc} Löst einen Impulssprung aus. Nur aus Kompatibilitätsgründen vorhanden.
-	 *
-	 * @return always <code>true</code>.
-	 */
-	@Override
-	@Deprecated
-	public boolean sprung (int kraft) {
-		this.impulsHinzunehmen(new Vektor(60, 0));
-		return true;
-	}
-
-	/**
-	 * {@inheritDoc} Aktiviert / Deaktiviert eine Standardschwerkraft. Nur aus
-	 * Kompatibilitätsgründen vorhanden.
-	 */
-	@Override
-	@Deprecated
-	public void schwerkraftAktivSetzen (boolean aktiv) {
-		force = aktiv ? new Vektor(0, 10) : Vektor.NULLVEKTOR;
-	}
-
-	/**
 	 * {@inheritDoc}
 	 */
 	@Override
@@ -297,15 +275,6 @@ public class MechanikClient extends PhysikClient implements Ticker {
 	public boolean steht () {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 */
-	@Override
-	@Deprecated
-	public void schwerkraftSetzen (int schwerkraft) {
-		this.kraftSetzen(new Vektor(0, 0.01f * schwerkraft));
 	}
 
 	/**

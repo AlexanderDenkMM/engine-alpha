@@ -423,37 +423,6 @@ public class DateiManager {
 	}
 
 	/**
-	 * Schreibt die ".eaf"-Datei zu einer Figur.
-	 * <p/>
-	 * Hierbei wird eine eventuell bestehende Datei dieses Namens rigoros gelöscht, sofern möglich.
-	 * <p/>
-	 * Diese Methode gibt zurück, ob das schreiben der Datei erfolgreich war oder nicht.
-	 *
-	 * @param f
-	 * 		Die zu schreibende Figur
-	 * @param name
-	 * 		Der Name der Datei. Dieser sollte mit ".eaf" enden, wenn nicht, wird dies automatisch
-	 * 		angehaengt.<br /> <b>Sollte der String allerdings sonst ein "."-Zeichen enthalten</b>, wird
-	 * 		nur eine Fehlermeldung ausgespuckt!
-	 * @param verzeichnis
-	 * 		Das Verzeichnis, in dem die Datei gespeichert werden soll. Ist dies ein leerer String (""),
-	 * 		so wird die Figur nur nach ihrem namen gespeichert.
-	 * @param relativ
-	 * 		Gibt an, ob das Verzeichnis relativ zum Spielprojekt geshen werden soll (standard)
-	 *
-	 * @return Ist <code>true</code>, wenn die Datei erfolgreich geschrieben wurde, sonst
-	 * <code>false</code>.
-	 *
-	 * @deprecated Deprecated, weil Pfade, die nicht mit <code>/</code> beginnen (bzw.
-	 * <code>C:\</code> auf Windows) automatisch relativ sind.
-	 */
-	@API
-	@Deprecated
-	public static boolean schreiben (Figur f, String name, String verzeichnis, boolean relativ) {
-		return schreiben(f, name, verzeichnis);
-	}
-
-	/**
 	 * Berechnet aus einem PixelFeld die Informationen und gibt sie als String zurück.
 	 * <p/>
 	 * <b>ACHTUNG</b>: Umbruchzeichen werden gesetzt, jedoch endet der String <b>nicht</b> mit einem
@@ -750,16 +719,5 @@ public class DateiManager {
 		colors.add(farbe);
 
 		return farbe;
-	}
-
-	/**
-	 * Diese Methode ist veraltet, da ein Pfad automatisch relativ ist, wenn er nicht mit
-	 * <code>/</code> (Linux) bzw. <code>C:</code> (Windows, andere Buchstaben ebenso möglich)
-	 * beginnt.
-	 */
-	@Deprecated
-	@SuppressWarnings ( "unused" )
-	public static Figur figurEinlesen (String verzeichnis, boolean relativ) {
-		return figurEinlesen(new File(verzeichnis));
 	}
 }

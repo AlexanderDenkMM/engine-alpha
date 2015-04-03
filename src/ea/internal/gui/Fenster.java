@@ -308,7 +308,7 @@ public class Fenster extends Frame {
 
 			@Override
 			public void keyReleased (KeyEvent e) {
-				int i = zuordnen(e.getKeyCode());
+				int i =  Taste.vonJava(e.getKeyCode());
 
 				if (i == -1) {
 					return;
@@ -439,7 +439,7 @@ public class Fenster extends Frame {
 	 * 		Das ausgeloeste KeyEvent zur Weiterverarbeitung.
 	 */
 	private void tastenAktion (KeyEvent e) {
-		int z = zuordnen(e.getKeyCode());
+		int z = Taste.vonJava(e.getKeyCode());
 
 		if (z == -1 || tabelle[z]) {
 			return;
@@ -450,24 +450,6 @@ public class Fenster extends Frame {
 		}
 
 		tabelle[z] = true;
-	}
-
-	/**
-	 * Ordnet vom Java-KeyCode-System in das EA-System um.
-	 * <p/>
-	 * Seit Version 3.0.3 ersetzt durch {@link ea.Taste#vonJava(int)}.
-	 *
-	 * @param keyCode
-	 * 		Der Java-KeyCode
-	 *
-	 * @return Entsprechender EA-KeyCode oder <code>-1</code>, falls es keinen passenden EA-KeyCode
-	 * gibt.
-	 *
-	 * @deprecated Seit v3.0.3. Durch {@link ea.Taste#vonJava(int)} ersetzt.
-	 */
-	@Deprecated
-	public int zuordnen (int keyCode) {
-		return Taste.vonJava(keyCode);
 	}
 
 	/**

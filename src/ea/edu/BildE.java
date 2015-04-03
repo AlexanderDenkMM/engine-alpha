@@ -27,11 +27,15 @@ import ea.Bild;
  *
  * @author Michael Andonie
  */
-public class BildE extends Bild {
+public class BildE extends Bild
+{
+
 	private static final long serialVersionUID = -3131852267825713616L;
 
-	public BildE (int x, int y, String pfad) {
+	public BildE (int x, int y, String pfad)
+    {
 		super(x, y, pfad);
 		FensterE.getFenster().wurzel.add(this);
 	}
+
 }

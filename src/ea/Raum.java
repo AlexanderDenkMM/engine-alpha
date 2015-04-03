@@ -1400,13 +1400,4 @@ public abstract class Raum implements Serializable, Comparable<Raum> {
 		return 0;
 	}
 
-
-
-
-
-
-
-
-
-
 }
